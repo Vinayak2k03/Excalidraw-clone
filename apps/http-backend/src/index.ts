@@ -9,9 +9,11 @@ import {
 } from "@repo/common/types";
 import { prismaClient } from "@repo/db/client";
 import { authMiddleware } from "./middleware";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post("/signup", async (req, res) => {
   try {
